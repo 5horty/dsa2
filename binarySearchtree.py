@@ -200,6 +200,20 @@ class BST:
         else:
             return self._path_to(current.right, val, path)
 
+        def count_range(self, low, high):
+            self._count_range(self.root, low, high)
+
+    def _count_range(self, current_node, low, high):
+        if current_node is None:
+            return
+        if low <= current_node.val <= high: # if for order
+            print(current_node.val)
+        if current_node.val > low:
+            self._count_range(current_node.left, low, high)
+        if current_node.val < high:
+            self._count_range(current_node.right, low, high)
+
+
 def main():
     x = BST()
     x.insert(5)
