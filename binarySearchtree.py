@@ -200,8 +200,8 @@ class BST:
         else:
             return self._path_to(current.right, val, path)
 
-        def count_range(self, low, high):
-            self._count_range(self.root, low, high)
+    def count_range(self, low, high):
+        self._count_range(self.root, low, high)
 
     def _count_range(self, current_node, low, high):
         if current_node is None:
