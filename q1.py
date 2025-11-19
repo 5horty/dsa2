@@ -110,20 +110,6 @@ class Singleylinkedlist:
             n2 = n2.next
         return ll3
 
-    def split(self, pivot):
-        less = Singleylinkedlist()
-        greater = Singleylinkedlist()
-
-        current = self.head
-
-        while current:
-            if current.data < pivot:
-                less.insert(current.data)
-            else:
-                greater.insert(current.data)
-            current = current.next
-
-        return less, greater
 
         
             
