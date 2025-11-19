@@ -179,40 +179,7 @@ class BST:
             return 0
         return max(self._height(root.left), self._height(root.right)) + 1
 
-    def path_to(self, val):
-        return self._path_to(self.root, val)
-
-    def _path_to(self, current, val, path = None):
-        if path is None:
-            path = []
-
-        if current is None:
-            return None  # value not found
-
-    # Add current node to the path
-        path.append(current.val)
-
-        if current.val == val:
-            return path
-
-        if val < current.val:
-            return self._path_to(current.left, val, path)
-        else:
-            return self._path_to(current.right, val, path)
-
-    def count_range(self, low, high):
-        self._count_range(self.root, low, high)
-
-    def _count_range(self, current_node, low, high):
-        if current_node is None:
-            return
-        if low <= current_node.val <= high: # if for order
-            print(current_node.val)
-        if current_node.val > low:
-            self._count_range(current_node.left, low, high)
-        if current_node.val < high:
-            self._count_range(current_node.right, low, high)
-
+   
 
 def main():
     x = BST()
